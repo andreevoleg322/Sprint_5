@@ -20,7 +20,7 @@ class TestRegistration:
         driver.find_element(*TestLocators.NAME_FIELD).send_keys('Олег')
         driver.find_element(*TestLocators.EMAIL_FIELD).send_keys(email)
         driver.find_element(*TestLocators.PASSWORD_FIELD).send_keys(password)
-        driver.find_element(*TestLocators.SUBMIT_LOGIN_BUTTON).click()
+        driver.find_element(*TestLocators.SUBMIT_REGISTRATION_BUTTON).click()
 
         WebDriverWait(driver, 5).until(expected_conditions.url_contains("/login"))
         assert "/login" in driver.current_url
@@ -40,7 +40,7 @@ class TestRegistration:
         driver.find_element(*TestLocators.NAME_FIELD).send_keys('Олег')
         driver.find_element(*TestLocators.EMAIL_FIELD).send_keys(email)
         driver.find_element(*TestLocators.PASSWORD_FIELD).send_keys(password)
-        driver.find_element(*TestLocators.SUBMIT_LOGIN_BUTTON).click()
+        driver.find_element(*TestLocators.SUBMIT_REGISTRATION_BUTTON).click()
 
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(TestLocators.ERROR_INCORRECT_PASSWORD_REGISTRATION))
         assert driver.find_element(*TestLocators.ERROR_INCORRECT_PASSWORD_REGISTRATION).text == 'Некорректный пароль'
